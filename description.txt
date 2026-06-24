@@ -1,7 +1,67 @@
--------------------------------- Lessons 1
+-------------------------------- Lesson 1
+https://youtu.be/e7Z4AuqtFCY
+
+
+
+
+-------------------------------- Lesson 2
 https://youtu.be/Ea4RL4SqB6s
 
+
+База данних - проект
+
+Схема - логічна група таблиць
+
+Таблиці - наші данні
+
+строки - записи
+
+стовбці  - поля
+
+integer - цілі числа
+
+real/numeric - числа з плав точкою - дробні
+
+text/varchar - текст
+
+boolean - логічні
+
+date / timestamp - дата
+
+json/jsonb - 
+
+uuid - унікальний ідентифікатор
+
+array - массив
+
+custome type
+
+
+---------------------
+
+Створення Таблиці:
+-----------------------
+PG Admin -> Data_Base -> Query Toll
+CREATE TABLE IF NOT EXISTS articles (id SERIAL PRIMARY KEY, title VARCHAR(100));
+
+Видалення таблиці:
+-----------------------
+DROP TABLE articles;
+
+Очистка таблиці
+----------------------
+TRUNCATE articles
+
+
+
+
+
+
+
+
+
+
 --------------------------------
-00 : 00 : 00
+00 : 07 : 07
 
 
