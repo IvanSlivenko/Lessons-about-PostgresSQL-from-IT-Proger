@@ -53,6 +53,23 @@ DROP TABLE articles;
 TRUNCATE articles
 
 
+------------------------------------------ Створюємо таблицю users
+CREATE TABLE IF NOT EXISTS users (
+id SERIAL PRIMARY KEY,
+name VARCHAR(50),
+email VARCHAR(100),
+age INTEGER,
+is_active BOOLEAN  DEFAULT TRUE,
+date TIMESTAMP DEFAULT NOW()
+);
+
+
+----------------------------------------- Заповнюємо таблицю users
+INSERT INTO users (name, email, age) VALUES ('Ivan', umanproger@ukr.net, 44)
+
+-----------------------------------------Перегляд таблиці users
+SELECT * FROM users
+
 
 
 
@@ -62,6 +79,6 @@ TRUNCATE articles
 
 
 --------------------------------
-00 : 07 : 07
+00 : 12 : 34
 
 
