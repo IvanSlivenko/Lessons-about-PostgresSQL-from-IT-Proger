@@ -71,7 +71,9 @@ INSERT INTO users (name, email, age) VALUES ('Ivan', umanproger@ukr.net, 44)
 SELECT * FROM users
 
 
-
+SELECT id, name, email, age FROM public.users
+WHERE id = 5
+ORDER BY id ASC
 
 
 
@@ -81,4 +83,7 @@ SELECT * FROM users
 --------------------------------
 00 : 12 : 34
 
+----------------------------------------------------- Lesson 3
+https://youtu.be/YS0jYP3_F54
 
+-------------------------------------------
