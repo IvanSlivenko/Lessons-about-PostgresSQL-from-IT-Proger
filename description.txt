@@ -67,6 +67,13 @@ date TIMESTAMP DEFAULT NOW()
 ----------------------------------------- Заповнюємо таблицю users
 INSERT INTO users (name, email, age) VALUES ('Ivan', umanproger@ukr.net, 44)
 
+
+--------------------------------
+00 : 12 : 34
+
+----------------------------------------------------- Lesson 3
+https://youtu.be/YS0jYP3_F54
+
 -----------------------------------------Перегляд таблиці users
 SELECT * FROM users
 
@@ -91,11 +98,77 @@ SELECT id, name, email, age FROM public.users
 WHERE  email LIKE '%Slivenko%'
 ORDER BY id ASC
 
---------------------------------
-00 : 12 : 34
+SELECT id, name, email, age FROM public.users
+WHERE  email NOT LIKE '%ASlivenko%'
+ORDER BY id ASC
 
------------------------------------------------------ Lesson 3
-https://youtu.be/YS0jYP3_F54
+........................................
+
+SELECT id, name, email, age, date  -- що вибрати
+
+FROM public.users  -- звідки
+
+-- where name = 'Anna' -- за якої умови
+
+-- AND -- і
+
+-- id=5 -- умова № 2
+
+ORDER BY date Desc -- сортування за спаданням
+
+OFFSET 1 -- пропустити
+
+LIMIT 4 -- обмежити
+
+..........................................
+UPDATE public.users SET name = 'Liliya', email = 'LProkopenko@ukr.net'   -- змінюємо
+
+WHERE id = 5
+
+------------------------------
+--DELETE FROM public.users -- видаляємо 
+
+--WHERE id = 5
 
 -------------------------------------------
 00 : 07 : 23
+
+
+---------------------------------------------------- Lesson 4
+https://youtu.be/t2KomsKiJwk
+
+CREATE TABLE IF NOT EXISTS orders (
+id SERIAL PRIMARY KEY,
+user_id INTEGER REFERENCES users(id),
+product VARCHAR(100),
+price INTEGER
+);
+
+SELECT ------------------------------------------------- INNER JOIN
+--*
+users.id as user_id,
+users.name,
+orders.id as product_id,
+orders.product,
+orders.price
+FROM  
+public.users -- users
+INNER JOIN
+public.orders -- orders
+ON public.users.id = orders.user_id
+
+
+
+----------------------------------------------------
+00 : 00 : 00
+
+
+---------------------------------------------------------
+CREATED TABLE IF NOT EXISTS orders ------------------------------------------- створення таблиці
+INSERT INTO orders (user_id, product, price) VALUES (1, 'kimono 120', 1000) ---------------------------------- наповнення Таблиці
+
+
+
+
+
+---------------------------------------------------------
