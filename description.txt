@@ -75,8 +75,17 @@ SELECT id, name, email, age FROM public.users
 WHERE id = 5
 ORDER BY id ASC
 
+SELECT id, name, email, age FROM public.users
+WHERE age > 15 AND name <> 'Ivan'
+ORDER BY id ASC
 
+SELECT id, name, email, age FROM public.users
+WHERE  name IN  ('Ivan', 'Volodymyr','Nataliya')
+ORDER BY id ASC
 
+SELECT id, name, email, age FROM public.users
+WHERE  age BETWEEN  20 AND 45
+ORDER BY id ASC
 
 
 
