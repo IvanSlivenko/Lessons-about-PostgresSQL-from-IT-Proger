@@ -137,6 +137,17 @@ WHERE id = 5
 ---------------------------------------------------- Lesson 4
 https://youtu.be/t2KomsKiJwk
 
+========================================
+
+INNER JOIN --- Повертає лише ті записи, які є в обох таблицях
+FULL JOIN --- Повертає всі записи з обох таблиць, Якщо відповідника немає — з іншої сторони буде NULL
+LEFT JOIN --- Повертає усі записи з лівої таблиці, навіть якщо відповідників у правій немає
+RIGHT JOIN --- Повертає усі записи з правої таблиці, навіть якщо відповідників у лівій немає
+
+
+
+========================================
+
 CREATE TABLE IF NOT EXISTS orders (
 id SERIAL PRIMARY KEY,
 user_id INTEGER REFERENCES users(id),
@@ -144,23 +155,73 @@ product VARCHAR(100),
 price INTEGER
 );
 
-SELECT ------------------------------------------------- INNER JOIN
+------------------------------------------------- INNER JOIN
+SELECT 
 --*
 users.id as user_id,
 users.name,
 orders.id as product_id,
 orders.product,
 orders.price
+
 FROM  
 public.users -- users
 INNER JOIN
 public.orders -- orders
+
+ON public.users.id = orders.user_id
+
+------------------------------------------------------ LEFT JOIN
+SELECT 
+--*
+users.id as user_id,
+users.name,
+orders.id as product_id,
+orders.product,
+orders.price
+
+FROM  
+public.users
+LEFT JOIN
+public.orders
+
+ON public.users.id = orders.user_id
+
+------------------------------------------------------- RIGHT JOIN
+SELECT 
+--*
+users.id as user_id,
+users.name,
+orders.id as product_id,
+orders.product,
+orders.price
+
+FROM  
+public.users
+RIGHT JOIN
+public.orders
+
+ON public.users.id = orders.user_id
+
+------------------------------------------------------ FULL JOIN
+SELECT 
+--*
+users.id as user_id,
+users.name,
+orders.id as product_id,
+orders.product,
+orders.price
+
+FROM  
+public.users
+FULL JOIN
+public.orders
+
 ON public.users.id = orders.user_id
 
 
-
 ----------------------------------------------------
-00 : 00 : 00
+00 : 08 : 23
 
 
 ---------------------------------------------------------
