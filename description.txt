@@ -219,6 +219,23 @@ public.orders
 
 ON public.users.id = orders.user_id
 
+--------------------------------------------------------- WHERE , ORDER BY
+SELECT 
+--*
+users.id as user_id,
+users.name,
+orders.id as product_id,
+orders.product,
+orders.price
+
+FROM  
+public.users
+LEFT JOIN
+public.orders
+
+ON public.users.id = orders.user_id
+WHERE orders.price <= 1000
+ORDER BY orders.price DESC
 
 ----------------------------------------------------
 00 : 08 : 23
